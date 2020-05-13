@@ -1,5 +1,5 @@
 # DOLCE-mental_states-needs
-An ontology of mental states and needs based on DOLCE.
+An ontology of mental states and needs based on DOLCE (http://www.loa.istc.cnr.it/dolce/overview.html)
 
 May 2020.
 
