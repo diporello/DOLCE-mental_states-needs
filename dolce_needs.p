@@ -4,7 +4,9 @@
 %An ontology of needs as mental states
 %Developed by Daniele Porello with contributions by Luca Biccheri and Roberta Ferrario.
 
-%Proved consistent with Darwin 1.4.4 using the Hets https://github.com/spechub/Hets
+%May 2020
+
+%Proved consistent with Darwin 1.4.4 using the Hets environment: https://github.com/spechub/Hets
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
