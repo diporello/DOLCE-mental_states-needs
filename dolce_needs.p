@@ -1,12 +1,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%An ontology of needs as mental states
+%An ontology of needs as mental states 
+%Based on DOLCE : http://www.loa.istc.cnr.it/dolce/overview.html
 %Developed by Daniele Porello with contributions by Luca Biccheri and Roberta Ferrario.
 
-%May 2020
-
-%Proved consistent with Darwin 1.4.4 using the Hets environment: https://github.com/spechub/Hets
+%Proved consistent with Darwin 1.4.4 using the Hets https://github.com/spechub/Hets
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -201,7 +200,7 @@ fof(ax_desires_df_need0, axiom, (![A,Y,T]: (need0(A,Y,T) <=> ?[X]: (apo(A) & nee
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 fof(ax_goals_df, axiom, (![A,Y,T]: (goal(A,Y,T) <=>
-        ((des(A,Y,T) | need0(A,Y,T)) & ~?[W]: (((des(A,W,T) | need0(A,W,T)) & ~?[E]: (cf(E,Y,T) & cf(E,W,T)))))))).
+        ((des(A,Y,T) | need0(A,Y,T)) & ~?[W]: (((des(A,W,T) | need0(A,W,T)) & ~?[E]: (cf(Y,E,T) & cf(W,E,T)))))))).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,7 +329,7 @@ fof(th_unicity_of_agent_ms, conjecture, ((![X,Y,Y1,T,T1]:(about1(X,Y,T) & about1
 
 %Two incompatible desires at t do not provide a goal at t:
 
-fof(th_goals_incomp_des, conjecture, ((des(a9,c11,t) & des(a9,c12,t) & ~?[E]: (cf(E,c11,t) & cf(E,c12,t))) => ~goal(a9,c11,t))).
+fof(th_goals_incomp_des, conjecture, ((des(a9,c11,t) & des(a9,c12,t) & ~?[E]: (cf(c11,E,t) & cf(c12,E,t))) => ~goal(a9,c11,t))).
 
 %A unique desire at t is a goal at t:
 
@@ -352,3 +351,5 @@ fof(th_needs_and_satisfiers, conjecture, (![A,Y,T]: (?[E]: ((need2(A,Y,T) & sat(
 %Need3 implies need0:
 
 fof(th_need3_need0, conjecture, (![A,Y,T]: (need3(A,Y,T) => (need0(A,Y,T))))).
+
+fof(th_need3_igoals, conjecture, (![A,Y,T]: (need3(A,Y,T) => (~igoal(A,Y,T))))).
